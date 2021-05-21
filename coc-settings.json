@@ -31,6 +31,7 @@
 		"dd": "cutFile",
 		"pp": "pasteFile"
 	},
+	"coc.preferences.hoverTarget": "preview",
 	"coc.source.syntax.firstMatch": false,
 	//diagnostic
 	"diagnostic.signOffset": 1,
