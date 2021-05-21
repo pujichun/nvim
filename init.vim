@@ -539,6 +539,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 
+let g:airline_powerline_fonts = 1
+
 
 "
 " 代码片段插件设置
