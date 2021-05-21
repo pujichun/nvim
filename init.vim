@@ -649,6 +649,13 @@ let g:dashboard_custom_header =[
 	\'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
 	\'   █   █  █      ▄▄           ▄▀   ',
 	\]
-" let g:dashboard_custom_footer =
 let g:dashboard_default_executive ='clap'
-" let g:dashboard_custom_shortcut
+let g:dashboard_custom_shortcut={
+\ 'find_history'       : 'SPC f h',
+\ 'new_file'           : 'SPC c n',
+\ 'last_session'       : 'SPC s l',
+\ 'find_file'          : 'SPC f f',
+\ 'find_word'          : 'SPC f a',
+\ 'book_marks'         : 'SPC f b',
+\ 'change_colorscheme' : 'SPC t c',
+\ }
