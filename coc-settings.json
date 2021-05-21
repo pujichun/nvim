@@ -1,63 +1,99 @@
 {
-	"languageserver": {
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-			"filetypes": ["go"]
-		}
-	},
-	"python.jediEnable": false,
-	"python.formatting.provider": "yapf",
-	"python.formatting.yapfArgs": [
-		"--style",
-		"{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
-	],
-	// explorer
-	"explorer.file.column.indent.indentLine": true,
-	"explorer.file.showHiddenFiles": true,
-	"explorer.file.column.git.showIgnored": false,
-	"explorer.keyMappingMode": "none",
-	"explorer.buffer.showHiddenBuffers": false,
-	"explorer.width": 30,
-	"explorer.icon.enableNerdfont": true,
-	"explorer.previewAction.onHover": true,
-	"explorer.keyMappings.global": {
-		"<cr>": ["expandable?", "expand", "open"],
-		"v": "open:vsplit",
-		"i": "nodePrev",
-		"k": "nodeNext",
-		"<tab>": "actionMenu",
-		"yy": "copyFile",
-		"dd": "cutFile",
-		"pp": "pasteFile"
-	},
-	"coc.preferences.hoverTarget": "preview",
-	"coc.source.syntax.firstMatch": false,
-	//diagnostic
-	"diagnostic.signOffset": 1,
-	"diagnostic.errorSign": "\uf467",
-	"diagnostic.warningSign": "\uf071",
-	"diagnostic.infoSign": "\uf129",
-	"diagnostic.hintSign": "\uf864",
-	"diagnostic.displayByAle": false,
-	"diagnostic.refreshOnInsertMode": false,
-	"diagnostic.refreshAfterSave": false,
-	"diagnostic.checkCurrentLine": true,
-	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
-	"diagnostic.virtualText": true,
-	"codeLens.enable": true,
-	"list.previewHighlightGroup": "Statement",
-	"diagnostic-languageserver.filetypes": {
-		"vim": "vint",
-		"email": "languagetool",
-		"markdown": ["write-good", "markdownlint"],
-		"sh": "shellcheck",
-		"elixir": ["mix_credo", "mix_credo_compile"],
-		"eelixir": ["mix_credo", "mix_credo_compile"],
-		"php": ["phpstan", "psalm"]
-	},
-	"diagnostic-languageserver.formatFiletypes": {
-		"elixir": "mix_format",
-		"eelixir": "mix_format"
-	}
+  "suggest.noselect": true,
+  "suggest.enablePreselect": false,
+  "suggest.completionItemKindLabels": {
+    "class": "\uf0e8",
+    "color": "\ue22b",
+    "constant": "\uf8fe",
+    "default": "\uf29c",
+    "enum": "\uf435",
+    "enumMember": "\uf02b",
+    "event": "\ufacd",
+    "field": "\uf93d",
+    "file": "\uf723",
+    "folder": "\uf115",
+    "function": "\u0192",
+    "interface": "\uf417",
+    "keyword": "\uf1de",
+    "method": "\uf6a6",
+    "module": "\uf40d",
+    "operator": "\uf915",
+    "property": "\ue624",
+    "reference": "\ufa46",
+    "snippet": "\ue60b",
+    "struct": "\ufb44",
+    "text": "\ue612",
+    "typeParameter": "\uf728",
+    "unit": "\uf475",
+    "value": "\uf89f",
+    "variable": "\ue71b"
+  },
+  //diagnostic
+  "diagnostic.signOffset": 1,
+  "diagnostic.errorSign": "\uf467",
+  "diagnostic.warningSign": "\uf071",
+  "diagnostic.infoSign": "\uf129",
+  "diagnostic.hintSign": "\uf864",
+  "diagnostic.displayByAle": false,
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.refreshAfterSave": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualTextPrefix": " ❯❯❯ ",
+  "diagnostic.virtualText": true,
+  "codeLens.enable": true,
+  "list.previousKeymap": "<C-i>",
+  "list.nextKeymap": "<C-k>",
+  "coc.preferences.formatOnSaveFiletypes": ["json"],
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "$HOME/.config/nvim/UltiSnips/",
+    "$HOME/.vim/plugged/vim-snippets/UltiSnips/"
+  ],
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  },
+  "python.jediEnable": false,
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfArgs": [
+    "--style",
+    "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
+  ],
+  // explorer
+  "explorer.file.column.indent.indentLine": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.file.column.git.showIgnored": false,
+  "explorer.keyMappingMode": "none",
+  "explorer.buffer.showHiddenBuffers": false,
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": true,
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit",
+    "i": "nodePrev",
+    "k": "nodeNext",
+    "<tab>": "actionMenu",
+    "yy": "copyFile",
+    "dd": "cutFile",
+    "pp": "pasteFile"
+  },
+  "coc.preferences.hoverTarget": "preview",
+  "coc.source.syntax.firstMatch": false,
+  "diagnostic-languageserver.filetypes": {
+    "vim": "vint",
+    "email": "languagetool",
+    "markdown": ["write-good", "markdownlint"],
+    "sh": "shellcheck",
+    "elixir": ["mix_credo", "mix_credo_compile"],
+    "eelixir": ["mix_credo", "mix_credo_compile"],
+    "php": ["phpstan", "psalm"]
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "elixir": "mix_format",
+    "eelixir": "mix_format"
+  }
 }
