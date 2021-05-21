@@ -194,8 +194,6 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
-
-
 "
 " coc插件配置
 "
@@ -228,6 +226,10 @@ let g:coc_global_extensions = [
 	\]
 
 
+let g:coc_snippet_next = '<c-n>'
+let g:coc_snippet_prev = '<c-b>'
+imap <C-n> <Plug>(coc-snippets-expand-jump)
+let g:snips_author = 'pujic'
 
 
 "
@@ -386,16 +388,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " TextEdit might fail if hidden is not set.
 set hidden
 
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -424,11 +419,8 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-o> coc#refresh()
+inoremap <silent><expr> <c-@> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -451,7 +443,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> <LEADER>y :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -548,9 +540,9 @@ let g:airline_powerline_fonts = 1
 " 唤出补全代码片段
 let g:UltiSnipsExpandTrigger="<c-b>"
 " 切换到下一个需要修改的变量名
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
 " 切换到上一个需要修改的变量名 
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " 自定义代码片段的位置
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
