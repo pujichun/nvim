@@ -1,162 +1,4 @@
 "
-" coc插件配置
-"
-let g:coc_global_extensions = [
-	\ 'coc-gitignore',
-	\ 'coc-html',
-	\ 'coc-json',
-	\ 'coc-lists',
-	\ 'coc-pyright',
-	\ 'coc-snippets',
-	\ 'coc-syntax',
-	\ 'coc-diagnostic',
-	\ 'coc-explorer',
-	\ 'coc-prettier',
-	\ 'coc-sourcekit',
-	\ 'coc-stylelint',
-	\ 'coc-tasks',
-	\ 'coc-python',
-	\ 'coc-translator',
-	\ 'coc-tslint-plugin',
-	\ 'coc-tsserver',
-	\ 'coc-vetur',
-	\ 'coc-vimlsp',
-	\ 'coc-yaml',
-	\ 'coc-yank',
-	\ 'coc-sh',
-	\ 'coc-explorer',
-	\ 'coc-translator',
-	\ 'coc-diagnostic'
-	\]
-
-
-let g:coc_snippet_next = '<c-n>'
-let g:coc_snippet_prev = '<c-b>'
-imap <C-n> <Plug>(coc-snippets-expand-jump)
-let g:snips_author = 'pujic'
-
-
-"
-" 彩虹括号插件配置
-"
-let g:rainbow_conf = {
-	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-	\	'operators': '_,_',
-	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-	\	'separately': {
-	\		'*': {},
-	\		'tex': {
-	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-	\		},
-	\		'lisp': {
-	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-	\		},
-	\		'vim': {
-	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-	\		},
-	\		'html': {
-	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-	\		},
-	\		'css': 0,
-	\	}
-	\}
-let g:rainbow_active = 1
-
-
-
-
-"
-" 文件树设置
-" space + n 开启文件树
-" map <LEADER>t :NERDTreeToggle<CR>
-" let NERDTreeIgnore=['.pyc', '.vscode']
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "✹",
-"     \ "Staged"    : "✚",
-"     \ "Untracked" : "✭",
-"     \ "Renamed"   : "➜",
-"     \ "Unmerged"  : "═",
-"     \ "Deleted"   : "✖",
-"     \ "Dirty"     : "✗",
-"     \ "Clean"     : "✔︎",
-"     \ "Unknown"   : "?"
-"     \ }
-" " 键位映射
-" let g:NERDTreeMenuDown = 'k'
-" let g:NERDTreeMapOpenSplit = 'h'
-" let g:NERDTreeMenuUp = 'i'
-
-"explorer
-nmap tt :CocCommand explorer<CR>
-nmap tf :CocCommand explorer --preset floating<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
-
-
-"
-" startify
-"
-let g:startify_bookmarks = [
-	\ '~/.config/nvim/init.vim',
-	\ '~/.config/i3/config',
-	\ '~/.config/zsh/zshrc',
-	\]
-
-
-"
-" coc-translator
-"
-nmap <Leader>t <Plug>(coc-translator-p)
-vmap <Leader>t <Plug>(coc-translator-pv)
-nmap <Leader>r <Plug>(coc-translator-r)
-vmap <Leader>r <Plug>(coc-translator-rv)
-
-
-"
-" vim-easy-align
-"
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-
-
-"
-" 注释插件配置
-"
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }} 
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
-" 使用Ctrl + /来注释
-nmap <C-_>   <Plug>NERDCommenterToggle
-vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
-
-
-
-"
 " coc-nvim设置
 "
 " TextEdit might fail if hidden is not set.
@@ -303,9 +145,155 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" coc插件配置
+let g:coc_global_extensions = [
+	\ 'coc-gitignore',
+	\ 'coc-html',
+	\ 'coc-json',
+	\ 'coc-lists',
+	\ 'coc-pyright',
+	\ 'coc-snippets',
+	\ 'coc-syntax',
+	\ 'coc-diagnostic',
+	\ 'coc-explorer',
+	\ 'coc-prettier',
+	\ 'coc-sourcekit',
+	\ 'coc-stylelint',
+	\ 'coc-tasks',
+	\ 'coc-python',
+	\ 'coc-translator',
+	\ 'coc-tslint-plugin',
+	\ 'coc-tsserver',
+	\ 'coc-vetur',
+	\ 'coc-vimlsp',
+	\ 'coc-yaml',
+	\ 'coc-yank',
+	\ 'coc-sh',
+	\ 'coc-explorer',
+	\ 'coc-translator',
+	\ 'coc-diagnostic'
+	\]
+
+"explorer
+nmap tt :CocCommand explorer<CR>
+nmap tf :CocCommand explorer --preset floating<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
+let g:coc_snippet_next = '<c-n>'
+let g:coc_snippet_prev = '<c-b>'
+imap <C-n> <Plug>(coc-snippets-expand-jump)
+let g:snips_author = 'pujic'
+
+" coc-translator
+nmap <Leader>t <Plug>(coc-translator-p)
+vmap <Leader>t <Plug>(coc-translator-pv)
+nmap <Leader>r <Plug>(coc-translator-r)
+vmap <Leader>r <Plug>(coc-translator-rv)
 
 
+
+"
+" 彩虹括号插件配置
+"
+let g:rainbow_conf = {
+	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+	\	'operators': '_,_',
+	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+	\	'separately': {
+	\		'*': {},
+	\		'tex': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+	\		},
+	\		'lisp': {
+	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+	\		},
+	\		'vim': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+	\		},
+	\		'html': {
+	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+	\		},
+	\		'css': 0,
+	\	}
+	\}
+let g:rainbow_active = 1
+
+
+
+"
+" 文件树设置
+" space + n 开启文件树
+" map <LEADER>t :NERDTreeToggle<CR>
+" let NERDTreeIgnore=['.pyc', '.vscode']
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ "Unknown"   : "?"
+"     \ }
+" " 键位映射
+" let g:NERDTreeMenuDown = 'k'
+" let g:NERDTreeMapOpenSplit = 'h'
+" let g:NERDTreeMenuUp = 'i'
+
+
+
+"
+" startify
+"
+" let g:startify_bookmarks = [
+"     \ '~/.config/nvim/init.vim',
+"     \ '~/.config/i3/config',
+"     \ '~/.config/zsh/zshrc',
+"     \]
+
+
+
+"
+" vim-easy-align
+"
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+
+
+"
+" 注释插件配置
+"
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }} 
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+" 使用Ctrl + /来注释
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+
+
+
+" airline
 let g:airline_powerline_fonts = 1
+
 
 
 "
@@ -319,7 +307,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " 自定义代码片段的位置
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
-
 
 
 
@@ -344,7 +331,6 @@ let g:pymode_indent = 0
 
 
 
-
 "
 " go导入包
 "
@@ -353,11 +339,11 @@ nnoremap M :GoImports<CR>
 
 
 
-
 "
 " markdown
 "
 let g:mkdp_filetypes = ['markdown']
+
 
 
 "
