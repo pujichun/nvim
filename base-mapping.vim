@@ -1,4 +1,3 @@
-
 " 设置LEADER键为space
 let mapleader=" "
 " 键位映射
