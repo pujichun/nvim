@@ -44,6 +44,7 @@ Plug 'theniceboy/vim-deus'
 " Plug 'morhetz/gruvbox'
 " Plug 'connorholyday/vim-snazzy'
 " Plug 'chowie/vim-hybrid-reverse'
+" Plug 'sts10/vim-pink-moon'
 
 " 格式化插件
 " Plug 'Chiel92/vim-autoformat'
