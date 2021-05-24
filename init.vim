@@ -8,7 +8,7 @@
 
 " Author: @pujichun
 
-source $HOME/.config/nvim/vim-plug-dl.vim
+source $HOME/.config/nvim/vim-plug-check.vim
 source $HOME/.config/nvim/base-mapping.vim
 source $HOME/.config/nvim/base-setting.vim
 source $HOME/.config/nvim/plugins.vim
