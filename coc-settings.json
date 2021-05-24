@@ -1,4 +1,5 @@
 {
+  // suggest
   "suggest.noselect": true,
   "suggest.enablePreselect": false,
   "suggest.completionItemKindLabels": {
@@ -44,11 +45,13 @@
   "list.previousKeymap": "<C-i>",
   "list.nextKeymap": "<C-k>",
   "coc.preferences.formatOnSaveFiletypes": ["json"],
+  // snippets
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "$HOME/.config/nvim/UltiSnips/",
     "$HOME/.vim/plugged/vim-snippets/UltiSnips/"
   ],
+  // languageserver
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -56,13 +59,14 @@
       "filetypes": ["go"]
     }
   },
+  // python
   "python.jediEnable": false,
   "python.formatting.provider": "yapf",
   "python.formatting.yapfArgs": [
     "--style",
     "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
   ],
-  // explorer
+  // coc-explorer
   "explorer.file.column.indent.indentLine": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.file.column.git.showIgnored": false,
