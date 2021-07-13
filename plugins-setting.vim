@@ -171,7 +171,9 @@ let g:coc_global_extensions = [
 	\ 'coc-sh',
 	\ 'coc-explorer',
 	\ 'coc-translator',
-	\ 'coc-diagnostic'
+	\ 'coc-diagnostic',
+	\ 'coc-html',
+	\ 'coc-tsserver'
 	\]
 
 "explorer
