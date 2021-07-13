@@ -52,7 +52,7 @@ Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 
 " python pep8风格格式化插件
-Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
+" Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 
 " 顶栏
 Plug 'mg979/vim-xtabline'
@@ -67,11 +67,6 @@ Plug 'honza/vim-snippets'
 " 在当前单词显示下划线
 Plug 'itchyny/vim-cursorword'
 
-" Plug 'hdima/python-syntax',{'for':['python', 'vim-plug']}
-
-" 翻译插件
-" Plug 'voldikss/vim-translator', {'on': 'TranslateW'}
-
 " 选中区域内容插件和插入括号引号插件
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
@@ -82,8 +77,6 @@ Plug 'mg979/vim-visual-multi'
 " 图标插件
 Plug 'ryanoasis/vim-devicons'
 
-" 忘记sudo vim的时候使用:sw
-Plug 'lambdalisue/suda.vim'
 
 " 根据符号对齐
 Plug 'junegunn/vim-easy-align'
