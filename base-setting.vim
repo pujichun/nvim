@@ -40,6 +40,14 @@ if has("autocmd")
     au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam" 
 endif
 
+
+"
+" 缩进设置
+"
+autocmd FileType html setlocal ts=2 sw=2 expandtab
+autocmd FileType typescript setlocal ts=2 sw=2 expandtab
+
+
 "
 " 运行代码设置
 "
