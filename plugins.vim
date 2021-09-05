@@ -1,8 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-" 文件侧偏栏
-" Plug 'scrooloose/nerdtree',{'on': 'NERDTreeToggle'}
-" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " 状态栏显示文件信息
 Plug 'vim-airline/vim-airline'
@@ -28,7 +25,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'luochen1990/rainbow'
 " Plug 'p00f/nvim-ts-rainbow'
 
-" Plug 'vim-python/python-syntax'
 
 " 快速注释插件
 Plug 'preservim/nerdcommenter'
@@ -47,12 +43,8 @@ Plug 'theniceboy/vim-deus'
 " Plug 'sts10/vim-pink-moon'
 
 " 格式化插件
-" Plug 'Chiel92/vim-autoformat'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
-
-" python pep8风格格式化插件
-" Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 
 " 顶栏
 Plug 'mg979/vim-xtabline'

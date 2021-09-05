@@ -33,6 +33,8 @@ set listchars=tab:\|\ ,trail:▫
 set backspace=indent,eol,start
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+vnoremap Y "+y
+
 " 在插入模式下将光标设置为细条
 if has("autocmd")
     au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
@@ -45,6 +47,7 @@ endif
 " 缩进设置
 "
 autocmd FileType html setlocal ts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sw=2 expandtab
 autocmd FileType typescript setlocal ts=2 sw=2 expandtab
 
 
@@ -89,7 +92,7 @@ func! CompileRun()
 	elseif &filetype == 'go'
 		set splitbelow
 		:sp
-		:term go run .
+		:term go run %
 	endif
 endfunc
 

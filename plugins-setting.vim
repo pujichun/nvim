@@ -176,15 +176,18 @@ let g:coc_global_extensions = [
 	\ 'coc-tsserver'
 	\]
 
+
 "explorer
 nmap tt :CocCommand explorer<CR>
 nmap tf :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
+
 let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-b>'
 imap <C-n> <Plug>(coc-snippets-expand-jump)
 let g:snips_author = 'pujic'
+
 
 " coc-translator
 nmap <Leader>t <Plug>(coc-translator-p)
@@ -221,28 +224,6 @@ let g:rainbow_conf = {
 	\}
 let g:rainbow_active = 1
 
-
-
-"
-" 文件树设置
-" space + n 开启文件树
-" map <LEADER>t :NERDTreeToggle<CR>
-" let NERDTreeIgnore=['.pyc', '.vscode']
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "✹",
-"     \ "Staged"    : "✚",
-"     \ "Untracked" : "✭",
-"     \ "Renamed"   : "➜",
-"     \ "Unmerged"  : "═",
-"     \ "Deleted"   : "✖",
-"     \ "Dirty"     : "✗",
-"     \ "Clean"     : "✔︎",
-"     \ "Unknown"   : "?"
-"     \ }
-" " 键位映射
-" let g:NERDTreeMenuDown = 'k'
-" let g:NERDTreeMapOpenSplit = 'h'
-" let g:NERDTreeMenuUp = 'i'
 
 
 
@@ -292,10 +273,8 @@ nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 
-
 " airline
 let g:airline_powerline_fonts = 1
-
 
 
 "
@@ -316,20 +295,6 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 " vim-python-pep8-indent
 "
 let g:pymode_indent = 0
-
-
-
-
-"
-" vim-indent-guides
-"
-" let g:indent_guides_guide_size = 1
-" let g:indent_guides_start_level = 2
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indent_guides_color_change_precent = 1
-" let g:indent_guides_auto_colors = 0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 
 

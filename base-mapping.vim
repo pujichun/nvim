@@ -1,12 +1,12 @@
 " 设置LEADER键为space
 let mapleader=" "
 " 键位映射
-noremap k j
-noremap , 5j
-noremap j h
 noremap i k
+noremap j h
+noremap k j
 noremap h i
 noremap H I
+noremap , 5j
 noremap I 5k
 noremap L $
 noremap J 0
