@@ -72,9 +72,9 @@
   "explorer.file.column.git.showIgnored": false,
   "explorer.keyMappingMode": "none",
   "explorer.buffer.showHiddenBuffers": false,
-  "explorer.width": 30,
+  "explorer.width": 27,
   "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": true,
+  "explorer.previewAction.onHover": false,
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit",

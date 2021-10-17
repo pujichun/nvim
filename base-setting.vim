@@ -27,11 +27,15 @@ syntax on
 set wrap
 set showcmd
 set relativenumber
-let &t_ut=''
-set list
-set listchars=tab:\|\ ,trail:▫
-set backspace=indent,eol,start
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+set conceallevel=2
+"设置命令行的高度
+" 再次打开文件，定位到上次退出时的位置
+if has("autocmd")
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   exe "normal g`\"" |
+                \ endif
+endif
 
 vnoremap Y "+y
 
@@ -49,6 +53,8 @@ endif
 autocmd FileType html setlocal ts=2 sw=2 expandtab
 autocmd FileType json setlocal ts=2 sw=2 expandtab
 autocmd FileType typescript setlocal ts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sw=2 expandtab
+autocmd FileType javascriptreact setlocal ts=2 sw=2 expandtab
 
 
 "
