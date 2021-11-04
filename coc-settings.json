@@ -59,14 +59,6 @@
       "filetypes": ["go"]
     }
   },
-  // python
-  // "python.jediEnable": false,
-  // "python.formatting.provider": "yapf",
-  // "python.formatting.yapfArgs": [
-  //  "--style",
-  //  "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
-  // ],
-  // coc-explorer
   "explorer.file.column.indent.indentLine": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.file.column.git.showIgnored": false,

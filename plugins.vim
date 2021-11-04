@@ -17,11 +17,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 " Plug 'mhinz/vim-startify'
 Plug 'pujichun/dashboard-nvim'
 
-Plug 'liuchengxu/vim-which-key'
 
-" markdown
-" Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
-" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " 彩虹括号
 Plug 'luochen1990/rainbow'
@@ -40,11 +36,11 @@ Plug 'theniceboy/vim-deus'
 " Plug 'sts10/vim-pink-moon'
 
 " 格式化插件
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
+" Plug 'google/vim-maktaba'
+" Plug 'google/vim-codefmt'
 
 " 顶栏
-Plug 'mg979/vim-xtabline'
+" Plug 'mg979/vim-xtabline'
 
 " 缩进高亮插件
 Plug 'nathanaelkane/vim-indent-guides'
@@ -69,9 +65,13 @@ Plug 'ryanoasis/vim-devicons'
 " 根据符号对齐
 Plug 'junegunn/vim-easy-align'
 
-Plug 'liuchengxu/vim-clap'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'ap/vim-css-color'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 
 call plug#end()

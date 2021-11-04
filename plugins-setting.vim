@@ -160,19 +160,13 @@ let g:coc_global_extensions = [
 	\ 'coc-sourcekit',
 	\ 'coc-stylelint',
 	\ 'coc-tasks',
-	\ 'coc-python',
-	\ 'coc-translator',
 	\ 'coc-tslint-plugin',
-	\ 'coc-tsserver',
 	\ 'coc-vetur',
 	\ 'coc-vimlsp',
 	\ 'coc-yaml',
 	\ 'coc-yank',
 	\ 'coc-sh',
-	\ 'coc-explorer',
 	\ 'coc-translator',
-	\ 'coc-diagnostic',
-	\ 'coc-html',
 	\ 'coc-tsserver'
 	\]
 
@@ -273,8 +267,24 @@ nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 
+
 " airline
+set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+
 
 
 "
@@ -316,18 +326,24 @@ let g:mkdp_filetypes = ['markdown']
 "
 " dashboard-nvim
 "
-let g:dashboard_custom_header =[
-	\'          ▀████▀▄▄              ▄█ ',
-	\'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
-	\'    ▄        █          ▀▀▀▀▄  ▄▀  ',
-	\'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
-	\'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
-	\'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
-	\'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
-	\'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
-	\'   █   █  █      ▄▄           ▄▀   ',
-	\]
-let g:dashboard_default_executive ='clap'
+let g:dashboard_preview_command="cat"
+let g:dashboard_preview_file="~/.config/nvim/sunjon.cat"
+" let g:dashboard_preview_pipeline="lolcat"
+let g:dashboard_preview_file_width=72
+let g:dashboard_preview_file_height=11
+
+" let g:dashboard_custom_header =[
+"     \'          ▀████▀▄▄              ▄█ ',
+"     \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
+"     \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
+"     \'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
+"     \'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
+"     \'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
+"     \'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
+"     \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
+"     \'   █   █  █      ▄▄           ▄▀   ',
+"     \]
+let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_shortcut={
 \ 'find_history'       : 'SPC f h',
 \ 'new_file'           : 'SPC c n',
@@ -337,6 +353,8 @@ let g:dashboard_custom_shortcut={
 \ 'book_marks'         : 'SPC f b',
 \ 'change_colorscheme' : 'SPC t c',
 \ }
+
+
 
 "
 " vim-indent-guides
@@ -348,65 +366,36 @@ let g:indent_guides_tab_guides = 1
 let g:indent_guides_space_guides = 1
 
 "
-" whick-key
-"
-let g:which_key_map = {}
-" Define prefix dictionary(localleader)
-let g:local_which_key_map = {}
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :WhichKey ','<CR>
-vnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
-" by defaule timeoutlen is 1000 ms
-set timeoutlen=2000
-call which_key#register('<Space>', "g:which_key_map")
-call which_key#register(',', "g:local_which_key_map")
-let g:which_key_sep = ''
-" 开启一个新窗口用于显示which-key
-let g:which_key_use_floating_win = 0
-" 开启后只显示一个状态栏
-autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-" 提示窗口在上面或在下面: botright/topleft
-" default: botright
-let g:which_key_position = 'botright'
-" 提示菜单靠左还是靠右(0左，1右)
-let g:which_key_centered = 0
-let g:which_key_map['b'] = {
-            \ 'name' : '+Buffers',
-            \ 'm' : [':XTabMode'        , 'Switch buffer/tab mode'],
-            \ 'n' : [':XTabNextBuffer'  , 'Jump to next buffer'],
-            \ 'p' : [':XTabPrevBuffer'  , 'Jump to prev buffer'],
-            \ 'N' : [':XTabNextBuffer ' , 'Search buffer num and jump to next'],
-            \ 'P' : [':XTabPrevBuffer ' , 'Search buffer num and jump to prev'],
-            \ 's' : ['<Plug>(XT-Select-Buffer)' , 'Search buffer num and jump'],
-            \}
-
-
-"
 " xtabline
+" 
+
+
+
 "
-let g:xtabline_settings = {}
-let g:xtabline_settings.enable_mappings = 0
-let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
-let g:xtabline_settings.enable_persistance = 0
-let g:xtabline_settings.last_open_first = 0
-noremap <leader>n :XTabNextBuffer<CR>
-noremap <leader>p :XTabPrevBuffer<CR>
-noremap <leader>C :XTabCleanUp<CR>
-" let g:xtabline_settings.theme = 'dracula'
+" Telescope
+"
+nnoremap ff <cmd>Telescope find_files<cr>
+nnoremap fg <cmd>Telescope live_grep<cr>
+nnoremap fb <cmd>Telescope buffers<cr>
 
-" `-2`  ->   path/to/file.ext
-" `-1`  ->   to/file.ext
-" ` 0`  ->   file.ext
-" ` 1`  ->   l/p/t/file.ext      (default)
-" ` 2`  ->   l/p/to/file.ext
-noremap \p :echo expand('%:p')<CR>
 
-" xtabline 在打开文件时没有默认设置标签名称
-" 本处修改：打开文件时默认将文件名设置为tabname，nmap <leader>ta :XTabListTabs<CR>调出tab列表时可以直观看到所有带有文件名的tab
-au BufEnter * exec "call SetXtabName()"
-func! SetXtabName()
-	call xtabline#cmds#run("name_tab", expand('%'))
-endfunc
+
+"
+" nvim-treesitter
+"
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = {}, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    -- disable = { "c", "rust" },  -- list of language that will be disabled
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
