@@ -18,7 +18,6 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'pujichun/dashboard-nvim'
 
 
-
 " 彩虹括号
 Plug 'luochen1990/rainbow'
 
@@ -60,13 +59,19 @@ Plug 'gcmt/wildfire.vim'
 Plug 'mg979/vim-visual-multi'
 
 " 图标插件
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
+
+
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'
 
 " 根据符号对齐
 Plug 'junegunn/vim-easy-align'
 
+" search plugin
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
 Plug 'airblade/vim-gitgutter'
 
 Plug 'ap/vim-css-color'

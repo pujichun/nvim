@@ -271,19 +271,19 @@ vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 " airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_idx_mode = 1
+" let g:airline#extensions#virtualenv#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'default'
+" nmap <leader>1 <Plug>AirlineSelectTab1
+" nmap <leader>2 <Plug>AirlineSelectTab2
+" nmap <leader>3 <Plug>AirlineSelectTab3
+" nmap <leader>4 <Plug>AirlineSelectTab4
+" nmap <leader>5 <Plug>AirlineSelectTab5
+" nmap <leader>6 <Plug>AirlineSelectTab6
+" nmap <leader>7 <Plug>AirlineSelectTab7
+" nmap <leader>8 <Plug>AirlineSelectTab8
+" nmap <leader>9 <Plug>AirlineSelectTab9
 
 
 
@@ -326,23 +326,23 @@ let g:mkdp_filetypes = ['markdown']
 "
 " dashboard-nvim
 "
-let g:dashboard_preview_command="cat"
-let g:dashboard_preview_file="~/.config/nvim/sunjon.cat"
+" let g:dashboard_preview_command="cat"
+" let g:dashboard_preview_file="~/.config/nvim/sunjon.cat"
 " let g:dashboard_preview_pipeline="lolcat"
-let g:dashboard_preview_file_width=72
-let g:dashboard_preview_file_height=11
+" let g:dashboard_preview_file_width=72
+" let g:dashboard_preview_file_height=11
 
-" let g:dashboard_custom_header =[
-"     \'          ▀████▀▄▄              ▄█ ',
-"     \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
-"     \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
-"     \'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
-"     \'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
-"     \'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
-"     \'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
-"     \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
-"     \'   █   █  █      ▄▄           ▄▀   ',
-"     \]
+let g:dashboard_custom_header =[
+	\'          ▀████▀▄▄              ▄█ ',
+	\'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
+	\'    ▄        █          ▀▀▀▀▄  ▄▀  ',
+	\'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
+	\'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
+	\'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
+	\'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
+	\'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
+	\'   █   █  █      ▄▄           ▄▀   ',
+	\]
 let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_shortcut={
 \ 'find_history'       : 'SPC f h',
@@ -367,8 +367,14 @@ let g:indent_guides_space_guides = 1
 
 "
 " xtabline
-" 
-
+" "
+" let g:xtabline_settings = {}
+" let g:xtabline_settings.enable_mappings = 0
+" let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
+" let g:xtabline_settings.enable_persistance = 0
+" let g:xtabline_settings.last_open_first = 1
+" noremap to :XtabCycleMode<CR>
+" noremap \p :echo expand('%:p')<CR>
 
 
 "
@@ -383,7 +389,7 @@ nnoremap fb <cmd>Telescope buffers<cr>
 "
 " nvim-treesitter
 "
-lua <<EOF
+lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
@@ -398,4 +404,28 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+
+"
+" bufferline
+"
+lua << EOF
+require("bufferline").setup{}
+EOF
+
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
+
+nnoremap <silent>]b :BufferLineCycleNext<CR>
+nnoremap <silent>[b :BufferLineCyclePrev<CR>
+
+nnoremap <silent><C-t> :BufferLinePickClose<CR>
+
 
