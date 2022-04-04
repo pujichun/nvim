@@ -385,6 +385,7 @@ nnoremap fb <cmd>Telescope buffers<cr>
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  sync_install = false
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
@@ -394,6 +395,7 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
+	disable = {"julia", "php", "kotlin", "cuda", "tlaplus", "perl", "dart", "c_sharp"}
   },
 }
 EOF
