@@ -147,7 +147,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " coc插件配置
 let g:coc_global_extensions = [
-	\ 'coc-gitignore',
 	\ 'coc-html',
 	\ 'coc-json',
 	\ 'coc-lists',
@@ -156,18 +155,12 @@ let g:coc_global_extensions = [
 	\ 'coc-syntax',
 	\ 'coc-diagnostic',
 	\ 'coc-explorer',
-	\ 'coc-prettier',
-	\ 'coc-sourcekit',
-	\ 'coc-stylelint',
 	\ 'coc-tasks',
-	\ 'coc-tslint-plugin',
-	\ 'coc-vetur',
 	\ 'coc-vimlsp',
 	\ 'coc-yaml',
 	\ 'coc-yank',
 	\ 'coc-sh',
 	\ 'coc-translator',
-	\ 'coc-tsserver'
 	\]
 
 
