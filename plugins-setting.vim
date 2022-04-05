@@ -158,7 +158,6 @@ let g:coc_global_extensions = [
 	\ 'coc-tasks',
 	\ 'coc-vimlsp',
 	\ 'coc-yaml',
-	\ 'coc-yank',
 	\ 'coc-sh',
 	\ 'coc-translator',
 	\]
@@ -385,7 +384,7 @@ nnoremap fb <cmd>Telescope buffers<cr>
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false
+  sync_install = false,
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
