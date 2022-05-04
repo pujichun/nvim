@@ -3,8 +3,8 @@ vim.g.maplocalleader = " "
 
 local keymap = vim.api.nvim_set_keymap
 
-local opts = { noremap = true, silent = false }
-local opts_s = { noremap = true, silent = true }
+local opts = {noremap = true, silent = false}
+local opts_s = {noremap = true, silent = true}
 
 --
 -- base setting
@@ -24,9 +24,9 @@ keymap("", "L", "$", opts) -- shift+l goto end of line
 
 keymap("n", "<leader><CR>", ":nohlsearch<CR>", opts) -- space+enter set search no highlight
 
-keymap("", "S", ":w<CR>", { noremap = false, silent = false }) -- use shift+s save file
-keymap("", "<Nop>", "s", { noremap = false, silent = true })
-keymap("", "Q", ":q<CR>", { noremap = false, silent = false }) -- use shift+q quit vim
+keymap("", "S", ":w<CR>", {noremap = false, silent = false}) -- use shift+s save file
+keymap("", "<Nop>", "s", {noremap = false, silent = true})
+keymap("", "Q", ":q<CR>", {noremap = false, silent = false}) -- use shift+q quit vim
 keymap("v", "Y", '"+y', opts) -- use shift+y copy to system clipboard
 keymap("v", "<S-Tab>", "<", opts) -- use shift+tab unindent
 keymap("v", "<Tab>", ">", opts) -- use tab indent
@@ -53,7 +53,6 @@ keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opts_s)
 keymap("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opts_s)
 keymap("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", opts_s)
 
-
 -- dashboard
 keymap("n", ";fh", ":DashboardFindHistory<CR>", opts)
 keymap("n", ";ff", ":DashboardFindFile<CR>", opts)
@@ -62,8 +61,6 @@ keymap("n", ";fa", ":DashboardFindWord<CR>", opts)
 keymap("n", ";fb", ":DashboardJumpMark<CR>", opts)
 keymap("n", ";cn", ":DashboardNewFile<CR>", opts)
 
-
 -- telescope
 keymap("n", ";ff", ":Telescope find_files<CR>", opts)
 keymap("n", ";fb", ":Telescope buffers<CR>", opts)
-
