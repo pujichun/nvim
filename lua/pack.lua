@@ -82,6 +82,8 @@ return require("packer").startup(
     use "gcmt/wildfire.vim"
     use "mg979/vim-visual-multi"
 
+    use "mhartington/formatter.nvim"
+
   end,
   config = {
     max_jobs = 16,

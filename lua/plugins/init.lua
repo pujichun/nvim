@@ -13,7 +13,6 @@ M.setup = function()
   local plugin_config_path = vim.fn.stdpath("config") .. "/lua/plugins"
   local unload_plugins = {
     "init", -- we don't need to load init again
-    "formatter",
     "nvim-lastplace"
   }
 
