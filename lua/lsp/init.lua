@@ -4,4 +4,5 @@ if not status_ok then
 end
 
 require("lsp.lsp-installer")
+require("lsp.lsp-saga")
 require("lsp.config").setup()
