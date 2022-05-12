@@ -58,6 +58,15 @@ require("formatter").setup(
             stdin = false
           }
         end
+      },
+      proto = {
+        function()
+          return {
+            exe = "clang-format",
+            args = {"--style","file", "-i"},
+            stdin = false
+          }
+        end
       }
     }
   }
