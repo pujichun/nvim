@@ -3,8 +3,8 @@ vim.g.maplocalleader = " "
 
 local keymap = vim.api.nvim_set_keymap
 
-local opts = {noremap = true, silent = false}
-local opts_s = {noremap = true, silent = true}
+local opts = { noremap = true, silent = false }
+local opts_s = { noremap = true, silent = true }
 
 --
 -- base setting
@@ -24,9 +24,9 @@ keymap("", "L", "$", opts) -- shift+l goto end of line
 
 keymap("n", "<leader><CR>", ":nohlsearch<CR>", opts) -- space+enter set search no highlight
 
-keymap("", "S", ":w<CR>", {noremap = false, silent = false}) -- use shift+s save file
-keymap("", "<Nop>", "s", {noremap = false, silent = true})
-keymap("", "Q", ":q<CR>", {noremap = false, silent = false}) -- use shift+q quit vim
+keymap("", "S", ":w<CR>", { noremap = false, silent = false }) -- use shift+s save file
+keymap("", "<Nop>", "s", { noremap = false, silent = true })
+keymap("", "Q", ":q<CR>", { noremap = false, silent = false }) -- use shift+q quit vim
 keymap("v", "Y", '"+y', opts) -- use shift+y copy to system clipboard
 keymap("v", "<S-Tab>", "<", opts) -- use shift+tab unindent
 keymap("v", "<Tab>", ">", opts) -- use tab indent
