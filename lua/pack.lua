@@ -66,10 +66,11 @@ return require("packer").startup(
       }
       use "lewis6991/gitsigns.nvim"
 
-      use {
-        "nvim-lualine/lualine.nvim",
-        requires = {"kyazdani42/nvim-web-devicons", opt = true}
-      }
+      -- use {
+      --   "nvim-lualine/lualine.nvim",
+      --   requires = {"kyazdani42/nvim-web-devicons", opt = true}
+      -- }
+      use "feline-nvim/feline.nvim"
 
       -- using packer.nvim
       use {"akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons"}
