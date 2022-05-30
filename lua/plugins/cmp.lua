@@ -129,6 +129,9 @@ if not status_luasnip_ok then
 end
 
 require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
+require("luasnip.loaders.from_vscode").load({paths={
+  vim.fn.stdpath("config") .. "/my-snippets"
+}}) -- load freindly-snippets
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))

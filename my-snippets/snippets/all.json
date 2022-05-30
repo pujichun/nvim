@@ -1,0 +1,9 @@
+{
+  "author" : {
+    "prefix": "author",
+    "body": [
+      "$LINE_COMMENT Author: pujichun",
+      "$LINE_COMMENT Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE"
+    ]
+  }
+}
