@@ -42,8 +42,6 @@ local options = {
   lsp_severity = vim.diagnostic.severity
 }
 
-vim.notify("line: 232", vim.log.levels.INFO)
-
 options.icon_styles = {
   default = {
     left = "",
