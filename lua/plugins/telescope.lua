@@ -60,7 +60,17 @@ local keybind = {
 
 telescope.setup {
   defaults = {
-    mappings = keybind
+    mappings = keybind,
+    file_ignore_patterns = {
+      "package-lock.json",
+      "node_modules",
+      "target",
+      ".idea",
+      ".vscode",
+      "venv",
+      "yarn.lock",
+      "go.mod"
+    }
   },
   extensions = {
     ["ui-select"] = {

@@ -52,7 +52,26 @@ keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opts_s)
 keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opts_s)
 keymap("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opts_s)
 keymap("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", opts_s)
+keymap("n", "<A-w>", ":BufferLineCloseLeft<CR>", opts_s)
+keymap("n", "<A-e>", ":BufferLineCloseRight<CR>", opts_s)
 
+
+-- keymap('n', '<A-,>', '<Cmd>BufferMovePrevious<CR>', opts_s)
+-- keymap('n', '<A-.>', '<Cmd>BufferMoveNext<CR>', opts_s)
+-- -- Goto buffer in position...
+-- keymap('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts_s)
+-- keymap('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts_s)
+-- keymap('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts_s)
+-- keymap('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts_s)
+-- keymap('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts_s)
+-- keymap('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts_s)
+-- keymap('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts_s)
+-- keymap('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts_s)
+-- keymap('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts_s)
+-- keymap('n', '<A-0>', '<Cmd>BufferLast<CR>', opts_s)
+-- keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts_s)
+-- keymap('n', '<C-p>', '<Cmd>BufferPick<CR>', opts_s)
+--
 -- dashboard
 keymap("n", ";fh", ":DashboardFindHistory<CR>", opts)
 keymap("n", ";ff", ":DashboardFindFile<CR>", opts)

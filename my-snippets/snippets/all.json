@@ -7,5 +7,35 @@
       "$LINE_COMMENT Date   :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
       "$LINE_COMMENT Dosc   :  "
     ]
+  },
+  "todo": {
+    "prefix": "todo",
+    "body": [
+      "$LINE_COMMENT TODO: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE pujichun $1"
+    ]
+  },
+  "fix": {
+    "prefix": "fix",
+    "body": [
+      "$LINE_COMMENT FIX: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE pujichun $1"
+    ]
+  },
+  "note": {
+    "prefix": "note",
+    "body": [
+      "$LINE_COMMENT NOTE: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE pujichun $1"
+    ]
+  },
+  "hack": {
+    "prefix": "hack",
+    "body": [
+      "$LINE_COMMENT HACK: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE pujichun $1"
+    ]
+  },
+  "warn": {
+    "prefix": "warn",
+    "body": [
+      "$LINE_COMMENT WARN: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE pujichun $1"
+    ]
   }
 }

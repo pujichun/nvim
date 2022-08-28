@@ -1,30 +1,34 @@
 local M = {}
 
--- TODO: backfill this to template
+-- diagnostic
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Infomation = "#0db9d7",
+  Hint = "#10B981"
+})
+
 M.setup = function()
-  local signs = {
-    {name = "DiagnosticSignError", text = ""},
-    {name = "DiagnosticSignWarn", text = ""},
-    {name = "DiagnosticSignHint", text = ""},
-    {name = "DiagnosticSignInfo", text = ""}
+  local _signs = {
+    {name = "DiagnosticSignError", text = ""},
+    {name = "DiagnosticSignWarn", text = " "},
+    {name = "DiagnosticSignHint", text = " "},
+    {name = "DiagnosticSignInfo", text = " "}
   }
 
-  for _, sign in ipairs(signs) do
+  for _, sign in ipairs(_signs) do
     vim.fn.sign_define(sign.name, {texthl = sign.name, text = sign.text, numhl = ""})
   end
 
   local config = {
     -- disable virtual text
     virtual_text = {
-      prefix = " ❯❯❯ ",
-      float = {
-        -- 是否显示诊断来源？是的
-        source = "always"
-      }
+      spacing = 4,
+      prefix = " "
     },
     -- show signs
     signs = {
-      active = signs
+      active = _signs
     },
     update_in_insert = true, -- insert mode show diagnostic
     underline = true,
@@ -73,6 +77,7 @@ local function lsp_highlight_document(client)
   end
 end
 
+-- 快捷键
 local function lsp_keymaps(bufnr)
   local opts = {noremap = true, silent = true}
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions theme=dropdown<CR>", opts)
@@ -81,36 +86,19 @@ local function lsp_keymaps(bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>u", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<A-cr>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<A-cr>", "<cmd>Lspsaga code_action<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    ";j",
-    '<cmd>Lspsaga diagnostic_jump_next<CR>',
-    opts
-  )
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    ";k",
-    '<cmd>Lspsaga diagnostic_jump_prev<CR>',
-    opts
-  )
+  vim.api.nvim_buf_set_keymap(bufnr, "n", ";j", '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", ";k", '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>t", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 M.on_attach = function(client, bufnr)
-  -- if client.name == "tsserver" or client.name == "clangd" then
-  -- client.resolved_capabilities.document_formatting = false
-  -- end
   lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
-
-  -- add outline support for evey lanuage
-  require "lsp_signature".on_attach()
+  require "lsp.lsp-signature".setup(bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

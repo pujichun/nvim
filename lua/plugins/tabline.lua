@@ -31,8 +31,9 @@ require("bufferline").setup {
     diagnostics = "nvim_lsp", -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
-      local icon = level:match("error") and " " or " "
-      return " " .. icon .. count
+      -- local icon = level:match("error") and " " or " "
+      -- return " " .. icon .. count
+      return ""
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
     custom_filter = function(buf_number, buf_numbers)
@@ -64,7 +65,7 @@ require("bufferline").setup {
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = "slant", -- "slant" | "thick" | "thin" | { 'any', 'any' },
+    separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
     enforce_regular_tabs = false,
     always_show_bufferline = true,
     -- sort_by = 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
@@ -74,3 +75,4 @@ require("bufferline").setup {
     sort_by = "insert_at_end"
   }
 }
+

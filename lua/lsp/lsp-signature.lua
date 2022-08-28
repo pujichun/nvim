@@ -18,7 +18,7 @@ local cfg = {
   -- this setting will be helpful if you do not want the PUM and floating win overlap
 
   floating_window_off_x = 1, -- adjust float windows x position.
-  floating_window_off_y = 1, -- adjust float windows y position.
+  floating_window_off_y = 0, -- adjust float windows y position.
 
 
   fix_pos = false, -- set to true, the floating window will not auto-close until finish all parameters
@@ -26,9 +26,9 @@ local cfg = {
   hint_prefix = "🐼 ", -- Panda for parameter
   hint_scheme = "String",
   hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
-  max_height = 12, -- max height of signature floating_window, if content is more than max_height, you can scroll down
+  max_height = 15, -- max height of signature floating_window, if content is more than max_height, you can scroll down
   -- to view the hiding contents
-  max_width = 80, -- max_width of signature floating_window, line will be wrapped if exceed max_width
+  max_width = 90, -- max_width of signature floating_window, line will be wrapped if exceed max_width
   handler_opts = {
     border = "rounded" -- double, rounded, single, shadow, none
   },
@@ -44,7 +44,7 @@ local cfg = {
   transparency = nil, -- disabled by default, allow floating win transparent value 1~100
   shadow_blend = 36, -- if you using shadow as border use this set the opacity
   shadow_guibg = 'Black', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
-  timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
+  timer_interval = 20, -- default timer check interval set to lower value if you want to reduce latency
   toggle_key = "<C-j>" -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
 }
 

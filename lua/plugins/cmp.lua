@@ -152,7 +152,7 @@ cfg = {
     keyword_length = 1,
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
   formatting = {
@@ -208,7 +208,7 @@ cfg = {
       if max_width ~= 0 and #vim_item.abbr > max_width then
         vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
       end
-      vim_item.kind = cfg.formatting.kind_icons[vim_item.kind]
+      vim_item.kind = string.format("%s %s", cfg.formatting.kind_icons[vim_item.kind], vim_item.kind)
       vim_item.menu = cfg.formatting.source_names[entry.source.name]
       vim_item.dup = cfg.formatting.duplicates[entry.source.name]
           or cfg.formatting.duplicates_default

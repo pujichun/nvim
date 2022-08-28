@@ -3,29 +3,27 @@ local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path}) --默认地址
 end
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(
   {
     function()
       use "wbthomason/packer.nvim" -- Packer can manage itself
 
-      use "theniceboy/nvim-deus" -- colorscheme
-      -- use "sainnhe/sonokai"
-      -- use "glepnir/zephyr-nvim"
+      use "pujichun/nvim-deus" -- colorscheme
 
       use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
       -- lsp
       use "neovim/nvim-lspconfig" -- enable LSP
       use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-      use "tami5/lspsaga.nvim"
+      use "kkharji/lspsaga.nvim"
       use {
         "j-hui/fidget.nvim",
         config = function()
           require("fidget").setup {}
         end
       }
+      use "ray-x/lsp_signature.nvim"
 
       -- cmp
       use "hrsh7th/nvim-cmp"
@@ -37,26 +35,13 @@ return require("packer").startup(
       use "hrsh7th/cmp-nvim-lsp"
       use "hrsh7th/cmp-nvim-lua"
       use "f3fora/cmp-spell" -- spell check
-      use {
-        "ray-x/lsp_signature.nvim"
-      }
       use "rafamadriz/friendly-snippets"
-
-      -- use "ethanholz/nvim-lastplace" -- jump to last place when open file
 
       use "lukas-reineke/indent-blankline.nvim"
       use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
       }
-
-      -- use "p00f/nvim-ts-rainbow"
-      -- use {
-      --   "windwp/nvim-ts-autotag",
-      --   config = function()
-      --     require("spellsitter").setup()
-      --   end
-      -- }
 
       use {
         "kyazdani42/nvim-tree.lua",
@@ -66,14 +51,19 @@ return require("packer").startup(
       }
       use "lewis6991/gitsigns.nvim"
 
-      -- use {
-      --   "nvim-lualine/lualine.nvim",
-      --   requires = {"kyazdani42/nvim-web-devicons", opt = true}
-      -- }
       use "feline-nvim/feline.nvim"
 
-      -- using packer.nvim
-      use {"akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons"}
+      use {
+        "akinsho/bufferline.nvim",
+        tag = "*",
+        requires = "kyazdani42/nvim-web-devicons"
+      }
+
+      -- use {
+      --   'romgrk/barbar.nvim',
+      --   requires = {'kyazdani42/nvim-web-devicons'}
+      -- }
+
       use {
         "numToStr/Comment.nvim",
         config = function()
@@ -102,11 +92,24 @@ return require("packer").startup(
       use "mg979/vim-visual-multi"
 
       use "mhartington/formatter.nvim"
+
+      use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim"
+      }
+      use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+          require("trouble").setup {}
+        end
+      }
+      use 'folke/lsp-colors.nvim'
+      use "Iron-E/nvim-highlite"
     end,
     config = {
       max_jobs = 16,
       git = {
-        -- default_url_format = 'https://github.com.cnomjs.org/%s'
         default_url_format = "https://github.com/%s"
       },
       display = {
