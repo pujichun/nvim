@@ -82,4 +82,5 @@ keymap("n", ";cn", ":DashboardNewFile<CR>", opts)
 
 -- telescope
 keymap("n", ";ff", ":Telescope find_files<CR>", opts)
+keymap("n", ";fg", ":Telescope live_grep<CR>", opts)
 keymap("n", ";fb", ":Telescope buffers<CR>", opts)

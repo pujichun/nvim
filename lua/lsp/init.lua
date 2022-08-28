@@ -6,3 +6,5 @@ end
 require("lsp.lsp-installer")
 -- require("lsp.lsp-saga")
 require("lsp.config").setup()
+
+vim.cmd([[ autocmd CursorHold,CursorHoldI * lua require('lsp.code_action').code_action_listener()]])

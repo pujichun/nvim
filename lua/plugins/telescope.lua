@@ -72,9 +72,16 @@ telescope.setup {
       "go.mod"
     }
   },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+      previewer = false,
+      find_command = {"fd"}
+    }
+  },
   extensions = {
     ["ui-select"] = {
-      require("telescope.themes").get_dropdown {}
+      require("telescope.themes").get_dropdown{}
 
       -- pseudo code / specification for writing custom displays, like the one
       -- for "codeactions"
