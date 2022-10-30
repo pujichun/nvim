@@ -16,6 +16,7 @@ local servers = {
   "html",
   "jsonls",
   "tsserver"
+  "rust_analyzer"
 }
 local cfg = {
   ensure_installed = servers, -- ensure these servers are always installed
