@@ -15,7 +15,7 @@ local servers = {
   "cssls",
   "html",
   "jsonls",
-  "tsserver"
+  "tsserver",
   "rust_analyzer"
 }
 local cfg = {
