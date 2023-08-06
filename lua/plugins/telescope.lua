@@ -81,7 +81,7 @@ telescope.setup {
   },
   extensions = {
     ["ui-select"] = {
-      require("telescope.themes").get_dropdown{}
+      require("telescope.themes").get_dropdown {}
 
       -- pseudo code / specification for writing custom displays, like the one
       -- for "codeactions"
@@ -96,8 +96,18 @@ telescope.setup {
       --      do the following
       --   codeactions = false,
       -- }
+    },
+    file_browser = {
+      theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {},
+        ["n"] = {}
+      }
     }
   }
 }
 
 require("telescope").load_extension("ui-select")
+require("telescope").load_extension("file_browser")

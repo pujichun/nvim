@@ -71,6 +71,7 @@ return require("packer").startup(
         end
       }
       use "glepnir/dashboard-nvim"
+      use { "nvim-telescope/telescope-file-browser.nvim" }
       use {
         "nvim-telescope/telescope.nvim",
         requires = {{"nvim-lua/plenary.nvim"}}

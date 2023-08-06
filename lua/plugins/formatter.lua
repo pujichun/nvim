@@ -52,10 +52,16 @@ require("formatter").setup(
           return {
             exe = "python3 -m autopep8",
             args = {
-              "--in-place --aggressive --aggressive",
-              vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+              "-",
             },
-            stdin = false
+            stdin = true
+          }
+        end,
+        function()
+          return {
+            exe = "python3 -m isort",
+            args = {"-q", "-"},
+            stdin = true
           }
         end
       },
@@ -63,8 +69,16 @@ require("formatter").setup(
         function()
           return {
             exe = "clang-format",
-            args = {"--style","file", "-i"},
+            args = {"--style", "file", "-i"},
             stdin = false
+          }
+        end
+      },
+      rust = {
+        function ()
+          return {
+            exe = "rustfmt",
+            stdin = true
           }
         end
       }
